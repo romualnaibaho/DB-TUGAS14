@@ -5,5 +5,5 @@ BEFORE INSERT ON nilai_mahasiswa
 FOR EACH ROW
 BEGIN
 INSERT INTO ipk_mahasiswa VALUES
-(CONCAT(NEW.nama, ' (',NEW.nim,')'), ROUND((SUM(NEW.semester_1)+SUM(NEW.semester_2)+SUM(NEW.semester_3))/3, 2));
+(CONCAT(NEW.nama, ' (',NEW.nim,')'), ROUND((NEW.semester_1 + NEW.semester_2 + NEW.semester_3)/3, 2));
 END$$
